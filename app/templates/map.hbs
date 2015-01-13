@@ -1,7 +1,6 @@
 This is my map
 
-{{#if geoloading}}
-  loading
-{{else}}
-  {{google-map latitude=latitude longitude=longitude}}
+{{#if loading}}
+  <h1>loading</h1>
 {{/if}}
+  {{google-map latitude=latitude longitude=longitude}}

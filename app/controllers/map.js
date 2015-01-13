@@ -2,8 +2,14 @@ import Ember from 'ember';
 
 var MapController = Ember.Controller.extend({
 
-  latitude:  Ember.computed.alias('model.location.latitude').readOnly(),
-  longitude: Ember.computed.alias('model.location.longitude').readOnly()
+  needs: ['maxmind', 'geolocation'],
+
+  loading: Ember.computed.alias('controllers.maxmind.isPending'),
+
+  maxmind: Ember.computed.alias('controllers.maxmind.model').readOnly(),
+
+  latitude:  Ember.computed.alias('maxmind.location.latitude').readOnly(),
+  longitude: Ember.computed.alias('maxmind.location.longitude').readOnly()
 
 });
 

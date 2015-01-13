@@ -3,6 +3,12 @@ import Ember from 'ember';
 var google = window.google;
 
 var GoogleMapsComponent = Ember.Component.extend({
+  latitude: null,
+  longitude: null,
+
+  _map: null,
+  _marker: null,
+
   insertMap: function() {
     var container = this.$(".map-canvas");
 
@@ -17,12 +23,29 @@ this.get("longitude"));
 
     var map = new google.maps.Map(container[0], options);
 
-    new google.maps.Marker({
+    this.set('_map', map);
+
+    var marker = new google.maps.Marker({
       position: latLong,
       map: map,
       title: 'Your reported location'
     });
-  }.on('didInsertElement')
+
+    this.set('_marker', marker);
+
+  }.on('didInsertElement'),
+
+  reposition: function(){
+    var map = this.get('_map');
+    var marker = this.get('_marker');
+
+    var latLong = new google.maps.LatLng(this.get("latitude"),
+this.get("longitude"));
+
+    map.setCenter(latLong);
+    marker.setPosition(latLong);
+
+  }.observes('latitude', 'longitude')
 });
 
 export default GoogleMapsComponent;
