@@ -43,13 +43,15 @@ module.exports = function(environment) {
 
   }
 
+  var remoteSources = " maps.googleapis.com maps.gstatic.com fonts.googleapis.com fonts.gstatic.com mts.googleapis.com"
+
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self'",
-    'font-src': "'self'",
-    'connect-src': "'self'",
-    'img-src': "'self'",
-    'style-src': "'self'",
+    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' js.maxmind.com maps.googleapis.com maps.gstatic.com mts0.googleapis.com mts1.googleapis.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self' js.maxmind.com",
+    'img-src': "'self' maps.googleapis.com maps.gstatic.com mts.googleapis.com mts0.googleapis.com mts1.googleapis.com csi.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
     'media-src': "'self'"
   };
 
