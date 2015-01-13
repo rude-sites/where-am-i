@@ -1,1 +1,0 @@
-/Users/matthew/Sites/WhereAmI/tmp/custom_static_compiler-tmp_dest_dir-tHJnRkRl.tmp/ember-cli-shims/README.md

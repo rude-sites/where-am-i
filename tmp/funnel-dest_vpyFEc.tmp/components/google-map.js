@@ -1,1 +1,0 @@
-/Users/matthew/Sites/WhereAmI/app/components/google-map.js
