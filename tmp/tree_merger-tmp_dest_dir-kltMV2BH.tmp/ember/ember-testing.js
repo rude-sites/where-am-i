@@ -1,0 +1,1 @@
+/Users/matthew/Sites/WhereAmI/tmp/custom_static_compiler-tmp_dest_dir-du2CnKFL.tmp/ember/ember-testing.js
