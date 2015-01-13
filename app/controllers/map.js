@@ -9,8 +9,9 @@ var MapController = Ember.Controller.extend({
   maxmind: Ember.computed.alias('controllers.maxmind.model').readOnly(),
 
   latitude:  Ember.computed.alias('maxmind.location.latitude').readOnly(),
-  longitude: Ember.computed.alias('maxmind.location.longitude').readOnly()
-
+  longitude: Ember.computed.alias('maxmind.location.longitude').readOnly(),
+  city: Ember.computed.alias('maxmind.city.names.en').readOnly(),
+  country: Ember.computed.alias('maxmind.country.names.en').readOnly()
 });
 
 export default MapController;

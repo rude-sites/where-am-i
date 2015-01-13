@@ -1,6 +1,7 @@
-This is my map
+{{google-map latitude=latitude longitude=longitude}}
 
-{{#if loading}}
-  <h1>loading</h1>
-{{/if}}
-  {{google-map latitude=latitude longitude=longitude}}
+{{#unless loading}}
+  <h2>You're in {{city}}, {{country}}</h2>
+
+  <p>latitude: {{latitude}}, longitude: {{longitude}}</p>
+{{/unless}}

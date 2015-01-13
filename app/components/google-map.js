@@ -10,14 +10,14 @@ var GoogleMapsComponent = Ember.Component.extend({
   _marker: null,
 
   insertMap: function() {
-    var container = this.$(".map-canvas");
+    var container = this.$(".google-map-canvas");
 
     var latLong = new google.maps.LatLng(this.get("latitude"),
 this.get("longitude"));
 
     var options = {
       center: latLong,
-      zoom: 17,
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
