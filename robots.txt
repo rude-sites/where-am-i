@@ -1,2 +1,4 @@
 # http://www.robotstxt.org
 User-agent: *
+
+Sitemap: http://whereami.co/sitemap.xml
